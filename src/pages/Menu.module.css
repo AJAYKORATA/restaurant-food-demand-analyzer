@@ -1,0 +1,100 @@
+.page { display: flex; flex-direction: column; gap: 20px; }
+.loading { display: flex; align-items: center; justify-content: center; height: 200px; color: var(--text-secondary); }
+
+.toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.cats { display: flex; gap: 6px; flex-wrap: wrap; }
+.catBtn {
+  padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+  font-size: 12px; font-weight: 500; background: var(--surface); color: var(--text-secondary);
+  transition: all 0.15s; white-space: nowrap;
+}
+.catBtn:hover { border-color: var(--primary); color: var(--primary); }
+.catActive { background: var(--primary) !important; border-color: var(--primary) !important; color: #fff !important; }
+
+.btnNew {
+  display: flex; align-items: center; gap: 6px;
+  padding: 9px 16px; background: var(--primary); color: #fff;
+  border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
+  transition: background 0.15s; white-space: nowrap;
+}
+.btnNew:hover { background: var(--primary-dark); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.dishCard {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  box-shadow: var(--shadow-sm); position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.dishCard:hover { box-shadow: var(--shadow); transform: translateY(-1px); }
+.inactive { opacity: 0.55; }
+
+.dishHeader {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 10px;
+}
+.catDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.catLabel { font-size: 11px; color: var(--text-secondary); flex: 1; font-weight: 500; }
+.dishActions { display: flex; gap: 2px; }
+.iconBtn {
+  background: none; border: none; padding: 4px; border-radius: 5px;
+  color: var(--text-secondary); transition: background 0.15s; display: flex; align-items: center;
+}
+.iconBtn:hover { background: #F3F4F6; }
+.danger { color: var(--error) !important; }
+
+.dishName { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+.dishMeta { display: flex; align-items: center; justify-content: space-between; }
+.price { font-size: 16px; font-weight: 700; color: var(--primary); }
+.prep { font-size: 11px; color: var(--text-muted); background: #F3F4F6; padding: 3px 7px; border-radius: 4px; }
+
+.inactiveTag {
+  position: absolute; top: 8px; right: 8px;
+  background: var(--error); color: #fff; font-size: 10px; font-weight: 600;
+  padding: 2px 6px; border-radius: 4px; letter-spacing: 0.05em;
+}
+
+.empty { color: var(--text-muted); font-size: 14px; padding: 32px; text-align: center; grid-column: 1/-1; }
+
+/* Modal */
+.modalBackdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,.45);
+  display: flex; align-items: center; justify-content: center; z-index: 200; padding: 16px;
+}
+.modal {
+  background: var(--surface); border-radius: 12px; width: 100%; max-width: 440px;
+  box-shadow: var(--shadow-lg);
+}
+.modalHeader {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px 16px; border-bottom: 1px solid var(--border);
+}
+.modalHeader h2 { font-size: 16px; font-weight: 600; }
+.modalBody { padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; }
+.modalFooter { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 10px; }
+
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > span { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.input {
+  padding: 8px 12px; border: 1px solid var(--border); border-radius: 7px;
+  font-size: 13px; outline: none; transition: border-color 0.15s;
+  background: var(--surface); color: var(--text-primary);
+}
+.input:focus { border-color: var(--primary); }
+.error { font-size: 13px; color: var(--error); }
+.btnPrimary {
+  padding: 9px 20px; background: var(--primary); color: #fff;
+  border: none; border-radius: 8px; font-size: 13px; font-weight: 600; transition: background 0.15s;
+}
+.btnPrimary:hover:not(:disabled) { background: var(--primary-dark); }
+.btnPrimary:disabled { opacity: 0.6; }
+.btnSecondary {
+  padding: 9px 20px; background: none; border: 1px solid var(--border);
+  border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--text-primary); transition: background 0.15s;
+}
+.btnSecondary:hover { background: #F3F4F6; }
